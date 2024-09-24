@@ -1,0 +1,142 @@
+@use "./mixin" as * ;
+@use "./colors" as * ;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    margin-top: -5px;
+}
+
+.moodList {
+    width: 100%;
+    height: 100%;
+    background-color: $moodList-background;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    @include center();
+}
+
+.start {
+    @include center();
+    color: $white-color;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    background-color: $boxs-background;
+    font-weight: bold;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+    height: 80px;
+    width: 125px;
+    margin: 2px;
+}
+
+.game {
+    color: $white-color;
+    margin: auto;
+    width: 255px;
+    font-weight: 500;
+    padding-top: 10px;
+    position: relative;
+}
+
+.title {
+    background-color: $boxs-background;
+    padding: 5px 0;
+    margin: 5px 0;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    @include center();
+}
+
+span {
+    color: $color-XO;
+    margin-right: 7px;
+}
+
+.boxs {
+    display: flex;
+    flex-wrap: wrap;
+    .box {
+            width: 80px;
+            height: 80px;
+            background-color: $boxs-background;
+            margin: 2px;
+            font-size: 60px;
+            cursor: pointer;
+            text-align: center;
+        }
+    .box.done {
+        pointer-events: none;
+    }
+}
+
+.Settings {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: $white-color;
+    font-weight: bold;
+    position: fixed;
+    background-color: $Settings-background;
+    z-index: 3;
+    @include center();
+    font-size: 40px;
+    display: none;
+    .Options {
+            background-color: $options-background;
+            padding: 45px 0;
+            width: 300px;
+            position: relative;
+            .reset {
+                    background: $reset-background;
+                    color: $white-color;
+                    width: 100px;
+                    height: 30px;
+                    margin-top: 20px;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            .leave {
+                background: $boxs-background;
+                color: $white-color;
+                width: 100px;
+                height: 30px;
+                margin-top: 20px;
+                border: none;
+                cursor: pointer;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            span {
+                @include center();
+                color: $white-color;
+                font-size: 25px;
+                font-weight: bold;
+                width: 25px;
+                height: 25px;
+                background-color: $boxs-background;
+                border-radius: 50%;
+                cursor: pointer;
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                padding-bottom: 5px;
+            }
+        }
+}
+
+.SettingsIcon {
+    color: $balck-color;
+    font-size: 20px;
+    cursor: pointer;
+}
